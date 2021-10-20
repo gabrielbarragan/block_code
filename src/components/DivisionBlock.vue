@@ -36,7 +36,7 @@ export default {
   --dfNodeMinWidth: 160px;
   --dfNodePaddingTop: 0px;
   --dfNodePaddingBottom: 0px;
-  --dfNodePaddingx: 40%;
+  --dfNodePaddingx: 0%;
   --dfNodeBoxShadowHL: 0px;
   --dfNodeBoxShadowVL: 2px;
   --dfNodeBoxShadowBR: 15px;

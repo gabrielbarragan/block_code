@@ -9,9 +9,16 @@ export default {
   name: 'RestaBlock',
   data() {
       return {
-        select_type: false,
+        data: '',
       }
   },
+  methods: {
+        get_data() 
+        {
+            const data = this.data
+            return data;
+        },
+  }
 
 }
 </script>

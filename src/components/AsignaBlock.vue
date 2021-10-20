@@ -9,7 +9,7 @@ export default {
   name: 'AsignaBlock',
   data() {
       return {
-        select_type: false,
+        data: '=',
       }
   },
 
