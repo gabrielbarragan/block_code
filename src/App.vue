@@ -113,7 +113,7 @@ export default {
 
     this.$df.addNode('RestaBlock', 2, 1, random_int(150,180), random_int(300,350), 'RestaBlock',{}, 'RestaBlock', 'vue');
     this.$df.on('nodeCreated', function(id) {
-
+      
       console.log('El id es:',id)
 
     })  
@@ -165,16 +165,28 @@ export default {
       this.$df.clear()
     },
     extract(){
-
-      this.nodoSuma = this.$df.getNodeFromId(1).inputs
-
-      for(const input in this.nodoSuma){
-        for(const connection in this.nodoSuma[input]){
-          console.log(this.nodoSuma[input][connection])
-        }
+      const nodos_suma_list = this.$df.getNodesFromName('SumaBlock')
+      console.log(nodos_suma_list)
+      for (const nodo_id_suma of nodos_suma_list) {
+        console.log(nodo_id_suma)
+        this.nodoSuma = this.$df.getNodeFromId(nodo_id_suma).inputs
         
-      }
+        for(const input in this.nodoSuma){
+         for(const connection in this.nodoSuma[input]){
+
+            this.nodoSuma[input][connection].forEach(element => {
+              
+              const nombreNodo= `node-${element['node']}`
+              console.log(nombreNodo)
+              console.log(document.getElementById(nombreNodo).querySelectorAll('input'))
+              
+            });            
+
+          }
+        
+        }  
       
+      }
     },
 
     
